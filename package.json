@@ -8,6 +8,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "create-react-app": "^5.0.0",
     "express": "^4.17.3",
     "fastpriorityqueue": "^0.7.1",
     "mongoose": "^6.2.9",
