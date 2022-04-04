@@ -8,13 +8,25 @@ const buildQuery = (item, attr, query, isList) => query.$and[0].$or.push({
     }
 });
 
-const calculatePriority = (l1, l2, weight) => {
+const calculatePriority = (l1, l2, weight, inc) => {
     let shift = 0;
     let curve = 1;
     l1.forEach((item, index) => {
         if (l2.includes(item)) {
-            shift += Math.pow(weight / (index + 1), curve);
-            curve += 0.5;
+            shift += Math.pow(weight / ((index * 2) + 1), curve);
+            curve += inc;
+        }
+    });
+    return shift;
+}
+
+const calculateGenrePriority = (l1, l2, weight, inc) => {
+    let shift = 0;
+    let curve = 1;
+    l1.forEach((item) => {
+        if (l2.includes(item)) {
+            shift += Math.pow(weight, curve);
+            curve += inc;
         }
     });
     return shift;
@@ -31,9 +43,9 @@ module.exports = (req, res) => {
             const queue = new PriorityQueue((a, b) => a.priority > b.priority);
             mediaList.forEach(media => {
                 media.priority = (
-                    calculatePriority(baselineMedia.cast, media.cast, 230)
-                    + calculatePriority(baselineMedia.director, media.director, 270)
-                    + calculatePriority(baselineMedia.director, media.director, 220)
+                    calculatePriority(baselineMedia.cast, media.cast, 310, 0.5)
+                    + calculatePriority(baselineMedia.director, media.director, 220, 0.5)
+                    + calculateGenrePriority(baselineMedia.listed_in, media.listed_in, 270, 1.1)
                 );
                 queue.add(media);
             });
