@@ -45,7 +45,7 @@ module.exports = (req, res) => {
                 media.priority = (
                     calculatePriority(baselineMedia.cast, media.cast, 310, 0.5)
                     + calculatePriority(baselineMedia.director, media.director, 220, 0.5)
-                    + calculateGenrePriority(baselineMedia.listed_in, media.listed_in, 270, 1.1)
+                    + calculateGenrePriority(baselineMedia.listed_in, media.listed_in, 270, 0.3)
                 );
                 queue.add(media);
             });
