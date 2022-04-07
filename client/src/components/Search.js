@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import Card from './Card';
 
 export default function Search() {
-    const [mediaResponse, setMediaResponse] = useState();
+    const [mediaResponse, setMediaResponse] = useState([]);
     const [query, setQuery] = useState(['']);
 
     return (
@@ -12,7 +13,10 @@ export default function Search() {
                     .then(response => response.json())
                     .then(setMediaResponse);
             }}>Click</button>
-            <p>{JSON.stringify(mediaResponse)}</p>
+            {mediaResponse.map((item) => {
+                if(item.poster != null) return <Card imgSrc={item.poster} />
+                return <Card imgSrc="https://media.discordapp.net/attachments/192431179876532226/961744120248930404/NoMedia.png?width=600&height=900" />
+            })}
         </div>
     )
 }
