@@ -1,11 +1,10 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 
-export default function Info(props) {
-    const info = useLocation().state
-
+export default function Info() {
+    const media = useLocation().state;
     return (
         <div>
-            <h1>{info.title}</h1>
+            <h1>{media.title}</h1>
         </div>
     )
 }
