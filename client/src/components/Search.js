@@ -8,12 +8,12 @@ export default function Search() {
     const [query, setQuery] = useState(['']);
     return (
         <div>
-            <input type='text' onChange={e => setQuery(e.target.value)} />
+            <input type='text' onChange={text => setQuery(text.target.value)} />
             <button title='Click' onClick={() => {
                 fetch(`/algorithm/?title=${query}`)
                     .then(response => response.json())
                     .then(setMediaResponse);
-            }}>Click</button>
+            }}>Search</button>
             {mediaResponse.map((item) => item.poster ? <Card imgSrc={item.poster} /> : <Card imgSrc={NO_MEDIA} />)}
         </div>
     );

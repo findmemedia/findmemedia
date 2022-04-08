@@ -34,7 +34,7 @@ const calculateGenrePriority = (l1, l2, weight, inc) => {
 
 module.exports = (req, res) => {
     Media.findOne({ 'title': req.query.title }, (_err, baselineMedia) => {
-        if (!baselineMedia) return res.json({ '_err': `No media found by title ${req.query.title}` });
+        if (!baselineMedia) return res.json([]);
         const query = new Query(baselineMedia.title);
         baselineMedia.director.forEach(item => buildQuery(item, 'director', query));
         baselineMedia.cast.forEach(item => buildQuery(item, 'cast', query));
