@@ -1,8 +1,3 @@
-import React from "react";
-
-function addDefaultSrc(e) {
-}
-
 export default function Card(props) {
     return (
         <div className="movie-card">
