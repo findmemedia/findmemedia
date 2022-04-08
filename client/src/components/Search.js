@@ -14,7 +14,7 @@ export default function Search() {
                     .then(response => response.json())
                     .then(setMediaResponse);
             }}>Search</button>
-            {mediaResponse.map((item) => <Card imgSrc={item.poster} NO_MEDIA={NO_MEDIA} />)}
+            {mediaResponse.map((item) => <Card media={item} NO_MEDIA={NO_MEDIA} />)}
         </div>
     );
 }
