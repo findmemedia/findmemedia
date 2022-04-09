@@ -6,16 +6,14 @@ export default function Main() {
     const [mediaResponse, setMediaResponse] = useState([]);
     return (
         <div>
-            {/* TODO: Add header <Header /> */}
             <SearchBar setRes={setMediaResponse} apiStr='/algorithm?title=' textProp='title' fillBehavior={
                 (val, set) => {
                     fetch(`/autofill?input=${val}&limit=${5}`) //TODO: Change limit based on page height
-                    .then(res => res.json())
-                    .then(res => set(res));
+                        .then(res => res.json())
+                        .then(res => set(res));
                 }
             } />
             <Carousel res={mediaResponse} imgProp='poster' backupSrc='https://i.imgur.com/4Bnxfak.png' />
-            {/* TODO: Add footer <Footer /> */}
         </div>
     );
 }
