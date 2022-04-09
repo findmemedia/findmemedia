@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import Card from './Card';
+import QueryFill from './QueryFill';
 
 export default function Search() { //TODO: Split Search into more components, and make everything more reusable
     const [mediaResponse, setMediaResponse] = useState([]);
-    const [query, setQuery] = useState('');
+    const [query, setQuery] = useState(''); //query not needed unless enter/button is functioning
     const [autofill, setAutofill] = useState([]);
     return (
         <div>
@@ -13,12 +14,7 @@ export default function Search() { //TODO: Split Search into more components, an
                     .then(res => res.json())
                     .then(setAutofill);
             }} />
-            <button title='Click' onClick={() => {
-                fetch(`/algorithm?title=${query}`)
-                    .then(res => res.json())
-                    .then(setMediaResponse);
-            }}>Search</button>
-            {autofill.map((item) => <h1>{item.title}</h1>) /* TODO: Break autofill stuff into 1-2 components */} 
+            {autofill.map((item) => <QueryFill title={item.title} setResponse={setMediaResponse} />) /* TODO: Break autofill stuff into 1-2 components */} 
             {mediaResponse.map((item) => <Card media={item} />)}
         </div>
     );
