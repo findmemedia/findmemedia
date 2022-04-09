@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Card from './Card';
-import QueryFill from './QueryFill';
+import Card from '../Card/Card';
+import QueryFill from '../QueryFill/QueryFill';
 
 export default function Search() { //TODO: Split Search into more components, and make everything more reusable
     const [mediaResponse, setMediaResponse] = useState([]);

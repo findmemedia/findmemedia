@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import "./card.css"
 
 const NO_MEDIA = 'https://media.discordapp.net/attachments/192431179876532226/961744120248930404/NoMedia.png?width=600&height=900';
 
