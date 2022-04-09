@@ -1,4 +1,5 @@
 import Card from './Card/Card';
+import './carousel.css';
 
 export default function Carousel(props) {
     return (

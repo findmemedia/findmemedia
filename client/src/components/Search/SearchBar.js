@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SearchBox from './SearchBox/SearchBox';
+import './search.css';
 
 export default function SearchBar(props) {
     const [query, setQuery] = useState(''); //NOTE: query not needed until button/enter search is implemented

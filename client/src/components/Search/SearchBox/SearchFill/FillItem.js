@@ -1,3 +1,5 @@
+import '../../search.css';
+
 export default function FillItem(props) {
     const behavior = (apiStr) => {
         fetch(apiStr)

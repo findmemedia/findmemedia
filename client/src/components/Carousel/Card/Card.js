@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './card.css';
+import '../carousel.css';
 
 export default function Card(props) {
     if (!props.imgSrc) props.imgSrc = props.backupSrc;
