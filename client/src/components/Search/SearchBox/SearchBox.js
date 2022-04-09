@@ -1,4 +1,4 @@
-import FillItem from './SearchFill/FillItem';
+import FillItem from './FillItem/FillItem';
 import '../search.css';
 
 export default function SearchBox(props) {
