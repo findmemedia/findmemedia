@@ -1,0 +1,21 @@
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar input[type='text'] {
+    width: 500px;
+    height: 40px;
+}
+
+@media (max-width: 991px) {
+    .searchbar input[type='text'] {
+        width: 250px;
+        height: 40px;
+    }
+}
+
+.searchbox {
+    display: block;
+}
