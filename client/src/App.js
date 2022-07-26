@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {fetch('http://localhost:8080/api/test').then((response) => response.text()).then((data) => console.log(data))}
         </p>
         <a
           className="App-link"

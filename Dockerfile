@@ -7,7 +7,7 @@ RUN rm -rf find-me-media/client/public find-me-media/client/src find-me-media/cl
 
 # Set up express app
 RUN mkdir find-me-media/server
-RUN (cd find-me-media/server && npm init -y && npm install express)
+RUN (cd find-me-media/server && npm init -y && npm install express && npm install cors)
 
 COPY scripts/*.sh scripts/
 
