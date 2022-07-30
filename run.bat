@@ -1,7 +1,9 @@
+set wd=%cd%
 docker run -it -p 3000:3000 -p 8080:8080^
-    --volume=%1/client/public:/find-me-media/client/public^
-    --volume=%1/client/src:/find-me-media/client/src^
-    --volume=%1/client/src:/find-me-media/client/.gitignore^
-    --volume=%1/client/src:/find-me-media/client/README.md^
-    --volume=%1/server/src:/find-me-media/server/src^
-    %2 /bin/sh
+    --volume=%wd%/client/public:/find-me-media/client/public^
+    --volume=%wd%/client/src:/find-me-media/client/src^
+    --volume=%wd%/client/.gitignore:/find-me-media/client/.gitignore^
+    --volume=%wd%/client/README.md:/find-me-media/client/README.md^
+    --volume=%wd%/server/src:/find-me-media/server/src^
+    --volume=%wd%/data-retrieval:/find-me-media/data-retrieval^
+    %1 /bin/sh
