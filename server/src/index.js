@@ -13,7 +13,6 @@ const Media = mongoose.model(
   })
 );
 
-
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -21,12 +20,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/test', (req, res) => {
-  res.json(Media.findOne({title : '21'}, (_err, media) => {
+  Media.findOne({title : '21'}, (_err, media) => {
     if (media) {
       res.json(media);
     }
     else res.send('failure');
-  }));
+  });
 });
 
 app.listen(port, () => {
