@@ -1,3 +1,5 @@
+@REM To run container using this script, type .\run.bat <container-name>
+
 set wd=%cd%
 docker run -it -p 3000:3000 -p 8080:8080^
     --volume=%wd%/client/public:/find-me-media/client/public^
