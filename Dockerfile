@@ -4,6 +4,10 @@ COPY scripts/*.sh /scripts/
 
 # Install react/frontend dependencies
 RUN /scripts/react_install.sh
+RUN rm -rf find-me-media/client/public \
+    find-me-media/client/src \
+    find-me-media/client/.gitignore \
+    find-me-media/client/README.md
 
 # Install express/backend dependencies
 RUN /scripts/express_install.sh
