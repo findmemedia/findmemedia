@@ -1,17 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+
 const app = express();
+const Media = require('./schemas/Media');
 const port = 8080;
 
 mongoose.connect(`mongodb+srv://Admin:${process.env.MONGO_PWD}@find-me-media-cluster.zw2beu5.mongodb.net/find-me-media?retryWrites=true&w=majority`);
-
-const Media = mongoose.model(
-  'media', 
-  new mongoose.Schema({
-      title: String
-  })
-);
 
 app.use(cors());
 
