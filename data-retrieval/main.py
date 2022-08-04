@@ -9,7 +9,7 @@ client = MongoClient(f"mongodb+srv://Admin:{os.environ['MONGO_PWD']}@find-me-med
 
 for page in range(1, 501):
     for movie in get_page('movie', page)['results']:
-        client['find-me-media'].test.insert_one({
+        client['find-me-media'].media.insert_one({
             'details': get_media('movie', movie['id'], 'details'),
             'credits': get_media('movie', movie['id'], 'credits'),
             'keywords': get_media('movie', movie['id'], 'keywords'),
