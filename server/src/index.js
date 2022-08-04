@@ -13,5 +13,5 @@ app.use(cors());
 app.get('/api/algorithm', algorithm);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+	console.log(`Example app listening on port ${port}`);
 });
