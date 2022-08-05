@@ -5,7 +5,10 @@ module.exports = mongoose.model(
     new mongoose.Schema({
         details: {
             title: String,
-            runtime: Number
+            genres: Array
+        },
+        keywords: {
+            keywords: Array
         }
     })
 );

@@ -1,9 +1,9 @@
 module.exports = class Query {
     constructor() {
-        this.$and = [];
+        this.$or = [];
     }
 
     add(obj) {
-        this.$and.push(obj);
+        this.$or.push(obj);
     }
 }
