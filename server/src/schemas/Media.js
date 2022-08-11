@@ -6,6 +6,7 @@ module.exports = mongoose.model(
         details: {
             title: String,
             genres: Array,
+            poster_path: String,
             belongs_to_collection: {
                 id: Number
             }

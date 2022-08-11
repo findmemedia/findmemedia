@@ -42,8 +42,13 @@ module.exports = (req, res) => {
                 });
                 jsonQueue = [];
                 queue.forEach(media => {
-                    if (media['details']['title'] != baseline['details']['title'])
-                        jsonQueue.push(media['details']['title']);
+                    if (media['details']['title'] != baseline['details']['title']) {
+                        item = {
+                            title: media['details']['title'],
+                            poster: 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + media['details']['poster_path']
+                        };
+                        jsonQueue.push(item);
+                    }
                 });
                 res.json(jsonQueue);
             });
