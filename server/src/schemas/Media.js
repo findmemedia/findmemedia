@@ -5,7 +5,18 @@ module.exports = mongoose.model(
     new mongoose.Schema({
         details: {
             title: String,
-            genres: Array
+            genres: Array,
+            belongs_to_collection: {
+                id: Number
+            }
+        },
+        credits: {
+            cast: [
+                {
+                    name: String,
+                    popularity: Number
+                }
+            ]
         },
         keywords: {
             keywords: Array
