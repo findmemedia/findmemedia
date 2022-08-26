@@ -4,7 +4,7 @@ export default function Info() {
     return (
         <div>
             <h1>{movie.title}</h1>
-            <img src={props.imgSrc} alt=""/>
+            <img src={movie.imgSrc} alt=""/>
         </div>
     );
 }
