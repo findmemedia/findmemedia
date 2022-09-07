@@ -11,5 +11,5 @@ module.exports = (req, res) => {
 				return {'title': media.details.title};
 			}))
 		}
-	})
+	}).limit(req.query.limit ? req.query.limit : 5);
 }
